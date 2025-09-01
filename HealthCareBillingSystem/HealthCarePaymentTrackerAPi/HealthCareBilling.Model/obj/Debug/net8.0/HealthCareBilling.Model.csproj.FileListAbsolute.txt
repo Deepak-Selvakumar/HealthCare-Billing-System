@@ -1,0 +1,11 @@
+C:\Users\NEW\Videos\Health Finance Module\HealthCarePaymentTrackerAPi\HealthCareBilling.Model\bin\Debug\net8.0\HealthCareBilling.Model.deps.json
+C:\Users\NEW\Videos\Health Finance Module\HealthCarePaymentTrackerAPi\HealthCareBilling.Model\bin\Debug\net8.0\HealthCareBilling.Model.dll
+C:\Users\NEW\Videos\Health Finance Module\HealthCarePaymentTrackerAPi\HealthCareBilling.Model\bin\Debug\net8.0\HealthCareBilling.Model.pdb
+C:\Users\NEW\Videos\Health Finance Module\HealthCarePaymentTrackerAPi\HealthCareBilling.Model\obj\Debug\net8.0\HealthCareBilling.Model.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\NEW\Videos\Health Finance Module\HealthCarePaymentTrackerAPi\HealthCareBilling.Model\obj\Debug\net8.0\HealthCareBilling.Model.AssemblyInfoInputs.cache
+C:\Users\NEW\Videos\Health Finance Module\HealthCarePaymentTrackerAPi\HealthCareBilling.Model\obj\Debug\net8.0\HealthCareBilling.Model.AssemblyInfo.cs
+C:\Users\NEW\Videos\Health Finance Module\HealthCarePaymentTrackerAPi\HealthCareBilling.Model\obj\Debug\net8.0\HealthCareBilling.Model.csproj.CoreCompileInputs.cache
+C:\Users\NEW\Videos\Health Finance Module\HealthCarePaymentTrackerAPi\HealthCareBilling.Model\obj\Debug\net8.0\HealthCareBilling.Model.dll
+C:\Users\NEW\Videos\Health Finance Module\HealthCarePaymentTrackerAPi\HealthCareBilling.Model\obj\Debug\net8.0\refint\HealthCareBilling.Model.dll
+C:\Users\NEW\Videos\Health Finance Module\HealthCarePaymentTrackerAPi\HealthCareBilling.Model\obj\Debug\net8.0\HealthCareBilling.Model.pdb
+C:\Users\NEW\Videos\Health Finance Module\HealthCarePaymentTrackerAPi\HealthCareBilling.Model\obj\Debug\net8.0\ref\HealthCareBilling.Model.dll

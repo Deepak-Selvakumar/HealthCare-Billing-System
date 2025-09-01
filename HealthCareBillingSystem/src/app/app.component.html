@@ -1,0 +1,23 @@
+<div class="app-container">
+  <!-- Only show header when NOT on authenticated routes -->
+  <header class="app-header" *ngIf="!isOnDashboard()">
+    <h1>{{ title }}</h1>
+    <nav class="navbar">
+      <ul>
+        <li *ngIf="!isLoggedIn"><a routerLink="/login" routerLinkActive="active">Login</a></li>
+        <li *ngIf="!isLoggedIn"><a routerLink="/register" routerLinkActive="active">Register</a></li>
+        <li *ngIf="isLoggedIn"><a routerLink="/dashboard" routerLinkActive="active">Dashboard</a></li>
+        <li *ngIf="isLoggedIn"><a (click)="logout()" style="cursor: pointer;">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="app-main">
+    <router-outlet></router-outlet>
+  </main>
+
+  <!-- Only show footer when NOT on authenticated routes -->
+  <footer class="app-footer" *ngIf="!isOnDashboard()">
+    <p>&copy; 2024 HealthCare Billing System. All rights reserved.</p>
+  </footer>
+</div>

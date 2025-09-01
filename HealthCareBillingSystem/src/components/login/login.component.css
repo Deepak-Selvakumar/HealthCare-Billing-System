@@ -1,0 +1,81 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 16px;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  padding: 24px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  border-radius: 12px;
+}
+
+.login-card-header {
+  justify-content: center;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.login-card-header mat-card-title {
+  font-size: 24px;
+  font-weight: 500;
+  color: #3f51b5;
+}
+
+.full-width {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.button-container button {
+  padding: 8px 16px;
+  height: 48px;
+  font-size: 16px;
+}
+
+.spinner {
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.error-message {
+  margin-top: 16px;
+  text-align: center;
+  padding: 8px;
+  border-radius: 4px;
+  background-color: #ffebee;
+}
+
+.card-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.register-text {
+  text-align: center;
+  margin: 0;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .login-card {
+    padding: 16px;
+  }
+  
+  .login-card-header mat-card-title {
+    font-size: 20px;
+  }
+}

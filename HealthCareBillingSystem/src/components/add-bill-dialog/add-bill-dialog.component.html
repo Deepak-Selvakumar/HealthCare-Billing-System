@@ -1,0 +1,140 @@
+<h2 mat-dialog-title>{{ data?.bill ? 'Edit Bill' : 'Create New Bill' }}</h2>
+
+<mat-dialog-content>
+  <form [formGroup]="billForm" class="bill-form">
+    <div class="form-row">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Patient</mat-label>
+        <mat-select formControlName="patientId" [disabled]="data?.patientId">
+          <mat-option *ngFor="let patient of patients" [value]="patient.id">
+            {{ patient.name }} ({{ patient.age }} years)
+          </mat-option>
+        </mat-select>
+        <mat-hint *ngIf="patientsLoading">Loading patients...</mat-hint>
+        <mat-error *ngIf="f['patientId'].hasError('required')">
+          Patient selection is required
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="form-row">
+      <mat-form-field appearance="outline" class="half-width">
+        <mat-label>Date</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="date">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-error *ngIf="f['date'].hasError('required')">
+          Date is required
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="half-width">
+        <mat-label>Payment Method</mat-label>
+        <mat-select formControlName="paymentMethod">
+          <mat-option value="CASH">Cash</mat-option>
+          <mat-option value="CARD">Card</mat-option>
+          <mat-option value="INSURANCE">Insurance</mat-option>
+          <mat-option value="ONLINE">Online</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <h3>Bill Items</h3>
+    
+    <div formArrayName="items" class="items-container">
+      <div *ngFor="let item of items.controls; let i = index" [formGroupName]="i" class="item-row">
+        <div class="item-content">
+          <mat-form-field appearance="outline" class="item-description">
+            <mat-label>Description</mat-label>
+            <input matInput formControlName="description" placeholder="Item description">
+            <mat-error *ngIf="items.at(i).get('description')?.hasError('required')">
+              Description is required
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="item-category">
+            <mat-label>Category</mat-label>
+            <mat-select formControlName="category">
+              <mat-option value="CONSULTATION">Consultation</mat-option>
+              <mat-option value="MEDICATION">Medication</mat-option>
+              <mat-option value="TEST">Test</mat-option>
+              <mat-option value="PROCEDURE">Procedure</mat-option>
+              <mat-option value="OTHER">Other</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="item-quantity">
+            <mat-label>Quantity</mat-label>
+            <input matInput type="number" formControlName="quantity" min="1">
+            <mat-error *ngIf="items.at(i).get('quantity')?.hasError('required')">
+              Quantity is required
+            </mat-error>
+            <mat-error *ngIf="items.at(i).get('quantity')?.hasError('min')">
+              Minimum quantity is 1
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="item-price">
+            <mat-label>Unit Price ($)</mat-label>
+            <input matInput type="number" formControlName="unitPrice" min="0" step="0.01">
+            <mat-error *ngIf="items.at(i).get('unitPrice')?.hasError('required')">
+              Price is required
+            </mat-error>
+            <mat-error *ngIf="items.at(i).get('unitPrice')?.hasError('min')">
+              Price cannot be negative
+            </mat-error>
+          </mat-form-field>
+
+          <div class="item-total">
+            <strong>Total: ${{ (items.at(i).get('quantity')?.value * items.at(i).get('unitPrice')?.value) | number:'1.2-2' }}</strong>
+          </div>
+
+          <button mat-icon-button color="warn" (click)="removeItem(i)" class="remove-item-btn">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <button mat-button type="button" (click)="addItem()" class="add-item-btn">
+      <mat-icon>add</mat-icon> Add Item
+    </button>
+
+    <div class="form-row">
+      <mat-form-field appearance="outline" class="half-width">
+        <mat-label>Tax ($)</mat-label>
+        <input matInput type="number" formControlName="tax" min="0" step="0.01">
+        <mat-error *ngIf="f['tax'].hasError('min')">
+          Tax cannot be negative
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="half-width">
+        <mat-label>Discount ($)</mat-label>
+        <input matInput type="number" formControlName="discount" min="0" step="0.01">
+        <mat-error *ngIf="f['discount'].hasError('min')">
+          Discount cannot be negative
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="total-section">
+      <h3>Total Amount: ${{ totalAmount | number:'1.2-2' }}</h3>
+    </div>
+
+    <div class="form-row">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Notes</mat-label>
+        <textarea matInput formControlName="notes" rows="2" placeholder="Additional notes"></textarea>
+      </mat-form-field>
+    </div>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button (click)="onCancel()" [disabled]="loading">Cancel</button>
+  <button mat-raised-button color="primary" (click)="onSubmit()" [disabled]="loading || billForm.invalid">
+    <span *ngIf="!loading">{{ data?.bill ? 'Update' : 'Create' }} Bill</span>
+    <mat-spinner *ngIf="loading" diameter="20" class="spinner"></mat-spinner>
+  </button>
+</mat-dialog-actions>

@@ -1,0 +1,78 @@
+<div class="bill-list-container">
+  <div class="header">
+    <div>
+      <h2>{{ patient ? patient.name + "'s Bills" : 'Billing' }}</h2>
+      <p *ngIf="patient">Total Amount: <strong>${{ getTotalAmount() | number:'1.2-2' }}</strong></p>
+    </div>
+    <button mat-raised-button color="primary" (click)="openAddBillDialog()">
+      <mat-icon>add</mat-icon> Add Bill
+    </button>
+  </div>
+
+  <div class="loading-spinner" *ngIf="loading">
+    <mat-spinner diameter="40"></mat-spinner>
+  </div>
+
+  <div class="table-container" *ngIf="!loading">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <!-- ID Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef>Bill ID</th>
+        <td mat-cell *matCellDef="let bill">#{{ bill.id }}</td>
+      </ng-container>
+
+      <!-- Patient Name Column -->
+      <ng-container matColumnDef="patientName">
+        <th mat-header-cell *matHeaderCellDef>Patient</th>
+        <td mat-cell *matCellDef="let bill">{{ bill.patientName }}</td>
+      </ng-container>
+
+      <!-- Date Column -->
+      <ng-container matColumnDef="date">
+        <th mat-header-cell *matHeaderCellDef>Date</th>
+        <td mat-cell *matCellDef="let bill">{{ bill.date | date:'mediumDate' }}</td>
+      </ng-container>
+
+      <!-- Amount Column -->
+      <ng-container matColumnDef="amount">
+        <th mat-header-cell *matHeaderCellDef>Amount</th>
+        <td mat-cell *matCellDef="let bill">${{ bill.amount | number:'1.2-2' }}</td>
+      </ng-container>
+
+      <!-- Status Column -->
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef>Status</th>
+        <td mat-cell *matCellDef="let bill">
+          <span class="status-badge" [class.paid]="bill.status === 'PAID'" 
+                [class.pending]="bill.status === 'PENDING'">
+            {{ bill.status }}
+          </span>
+        </td>
+      </ng-container>
+
+      <!-- Actions Column -->
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef>Actions</th>
+        <td mat-cell *matCellDef="let bill">
+          <button mat-icon-button color="primary">
+            <mat-icon>download</mat-icon>
+          </button>
+          <button mat-icon-button color="warn" (click)="deleteBill(bill)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <div class="no-data" *ngIf="dataSource.length === 0">
+      <mat-icon>receipt</mat-icon>
+      <p>No bills found</p>
+      <button mat-raised-button color="primary" (click)="openAddBillDialog()">
+        Create Your First Bill
+      </button>
+    </div>
+  </div>
+</div>

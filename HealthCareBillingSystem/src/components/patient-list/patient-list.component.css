@@ -1,0 +1,59 @@
+.patient-list-container {
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+.table-container {
+  position: relative;
+  min-height: 200px;
+  overflow: auto;
+}
+
+table {
+  width: 100%;
+}
+
+.no-data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  text-align: center;
+  color: #757575;
+}
+
+.no-data mat-icon {
+  font-size: 60px;
+  width: 60px;
+  height: 60px;
+  margin-bottom: 16px;
+}
+
+.no-data p {
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.error-snackbar {
+  background-color: #f44336;
+  color: white;
+}
+
+.success-snackbar {
+  background-color: #4caf50;
+  color: white;
+}

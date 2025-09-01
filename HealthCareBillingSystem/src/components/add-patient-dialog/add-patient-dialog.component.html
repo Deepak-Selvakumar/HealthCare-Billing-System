@@ -1,0 +1,118 @@
+<h2 mat-dialog-title>{{ data?.patient ? 'Edit Patient' : 'Add New Patient' }}</h2>
+
+<mat-dialog-content>
+  <form [formGroup]="patientForm" class="patient-form">
+    <div class="form-row">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Full Name</mat-label>
+        <input matInput formControlName="name" placeholder="Enter patient's full name">
+        <mat-error *ngIf="f['name'].hasError('required')">
+          Name is required
+        </mat-error>
+        <mat-error *ngIf="f['name'].hasError('minlength')">
+          Name must be at least 3 characters
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="form-row">
+      <mat-form-field appearance="outline" class="half-width">
+        <mat-label>Age</mat-label>
+        <input matInput type="number" formControlName="age" min="0" max="150">
+        <mat-error *ngIf="f['age'].hasError('required')">
+          Age is required
+        </mat-error>
+        <mat-error *ngIf="f['age'].hasError('min') || f['age'].hasError('max')">
+          Age must be between 0 and 150
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="half-width">
+        <mat-label>Gender</mat-label>
+        <mat-select formControlName="gender">
+          <mat-option value="Male">Male</mat-option>
+          <mat-option value="Female">Female</mat-option>
+          <mat-option value="Other">Other</mat-option>
+        </mat-select>
+        <mat-error *ngIf="f['gender'].hasError('required')">
+          Gender is required
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="form-row">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Phone Number</mat-label>
+        <input matInput formControlName="phone" placeholder="Enter 10-15 digit phone number">
+        <mat-error *ngIf="f['phone'].hasError('required')">
+          Phone number is required
+        </mat-error>
+        <mat-error *ngIf="f['phone'].hasError('pattern')">
+          Please enter a valid phone number
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="form-row">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" formControlName="email" placeholder="Enter email address">
+        <mat-error *ngIf="f['email'].hasError('email')">
+          Please enter a valid email address
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="form-row">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Address</mat-label>
+        <textarea matInput formControlName="address" rows="2" placeholder="Enter patient's address"></textarea>
+      </mat-form-field>
+    </div>
+
+    <div class="form-row">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Emergency Contact</mat-label>
+        <input matInput formControlName="emergencyContact" placeholder="Emergency contact number">
+      </mat-form-field>
+    </div>
+
+    <div class="form-row">
+      <mat-form-field appearance="outline" class="half-width">
+        <mat-label>Blood Group</mat-label>
+        <mat-select formControlName="bloodGroup">
+          <mat-option value="A+">A+</mat-option>
+          <mat-option value="A-">A-</mat-option>
+          <mat-option value="B+">B+</mat-option>
+          <mat-option value="B-">B-</mat-option>
+          <mat-option value="AB+">AB+</mat-option>
+          <mat-option value="AB-">AB-</mat-option>
+          <mat-option value="O+">O+</mat-option>
+          <mat-option value="O-">O-</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="form-row">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Allergies (comma separated)</mat-label>
+        <textarea matInput formControlName="allergies" rows="2" placeholder="List allergies separated by commas"></textarea>
+      </mat-form-field>
+    </div>
+
+    <div class="form-row">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Medical History (comma separated)</mat-label>
+        <textarea matInput formControlName="medicalHistory" rows="3" placeholder="List medical conditions separated by commas"></textarea>
+      </mat-form-field>
+    </div>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button (click)="onCancel()" [disabled]="loading">Cancel</button>
+  <button mat-raised-button color="primary" (click)="onSubmit()" [disabled]="loading || patientForm.invalid">
+    <span *ngIf="!loading">{{ data?.patient ? 'Update' : 'Create' }} Patient</span>
+    <mat-spinner *ngIf="loading" diameter="20" class="spinner"></mat-spinner>
+  </button>
+</mat-dialog-actions>

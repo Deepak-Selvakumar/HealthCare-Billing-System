@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "goL8gWY8YCViRoJTK2lqS+oFFE9H5frobBUaB+jxFg4=",
+  "Source": "HealthCareBillingAPI",
+  "BasePath": "_content/HealthCareBillingAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthCareBilling.Data", "HealthCareBilling.Data\HealthCareBilling.Data.csproj", "{6E747279-3CBD-48D8-909D-B7A6877BCAB5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthCareBilling.Model", "HealthCareBilling.Model\HealthCareBilling.Model.csproj", "{FDB76B74-1E8C-4828-BD50-A0CD68582725}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6E747279-3CBD-48D8-909D-B7A6877BCAB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E747279-3CBD-48D8-909D-B7A6877BCAB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E747279-3CBD-48D8-909D-B7A6877BCAB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E747279-3CBD-48D8-909D-B7A6877BCAB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDB76B74-1E8C-4828-BD50-A0CD68582725}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDB76B74-1E8C-4828-BD50-A0CD68582725}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDB76B74-1E8C-4828-BD50-A0CD68582725}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDB76B74-1E8C-4828-BD50-A0CD68582725}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

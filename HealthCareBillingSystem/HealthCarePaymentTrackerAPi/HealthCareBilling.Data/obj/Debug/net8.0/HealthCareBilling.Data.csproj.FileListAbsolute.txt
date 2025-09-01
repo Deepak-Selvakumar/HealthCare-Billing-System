@@ -1,0 +1,15 @@
+C:\Users\NEW\Videos\Health Finance Module\HealthCarePaymentTrackerAPi\HealthCareBilling.Data\bin\Debug\net8.0\HealthCareBilling.Data.deps.json
+C:\Users\NEW\Videos\Health Finance Module\HealthCarePaymentTrackerAPi\HealthCareBilling.Data\bin\Debug\net8.0\HealthCareBilling.Data.dll
+C:\Users\NEW\Videos\Health Finance Module\HealthCarePaymentTrackerAPi\HealthCareBilling.Data\bin\Debug\net8.0\HealthCareBilling.Data.pdb
+C:\Users\NEW\Videos\Health Finance Module\HealthCarePaymentTrackerAPi\HealthCareBilling.Data\bin\Debug\net8.0\HealthCareBilling.Model.dll
+C:\Users\NEW\Videos\Health Finance Module\HealthCarePaymentTrackerAPi\HealthCareBilling.Data\bin\Debug\net8.0\HealthCareBilling.Model.pdb
+C:\Users\NEW\Videos\Health Finance Module\HealthCarePaymentTrackerAPi\HealthCareBilling.Data\obj\Debug\net8.0\HealthCareBilling.Data.csproj.AssemblyReference.cache
+C:\Users\NEW\Videos\Health Finance Module\HealthCarePaymentTrackerAPi\HealthCareBilling.Data\obj\Debug\net8.0\HealthCareBilling.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\NEW\Videos\Health Finance Module\HealthCarePaymentTrackerAPi\HealthCareBilling.Data\obj\Debug\net8.0\HealthCareBilling.Data.AssemblyInfoInputs.cache
+C:\Users\NEW\Videos\Health Finance Module\HealthCarePaymentTrackerAPi\HealthCareBilling.Data\obj\Debug\net8.0\HealthCareBilling.Data.AssemblyInfo.cs
+C:\Users\NEW\Videos\Health Finance Module\HealthCarePaymentTrackerAPi\HealthCareBilling.Data\obj\Debug\net8.0\HealthCareBilling.Data.csproj.CoreCompileInputs.cache
+C:\Users\NEW\Videos\Health Finance Module\HealthCarePaymentTrackerAPi\HealthCareBilling.Data\obj\Debug\net8.0\HealthCa.F1201D7F.Up2Date
+C:\Users\NEW\Videos\Health Finance Module\HealthCarePaymentTrackerAPi\HealthCareBilling.Data\obj\Debug\net8.0\HealthCareBilling.Data.dll
+C:\Users\NEW\Videos\Health Finance Module\HealthCarePaymentTrackerAPi\HealthCareBilling.Data\obj\Debug\net8.0\refint\HealthCareBilling.Data.dll
+C:\Users\NEW\Videos\Health Finance Module\HealthCarePaymentTrackerAPi\HealthCareBilling.Data\obj\Debug\net8.0\HealthCareBilling.Data.pdb
+C:\Users\NEW\Videos\Health Finance Module\HealthCarePaymentTrackerAPi\HealthCareBilling.Data\obj\Debug\net8.0\ref\HealthCareBilling.Data.dll
